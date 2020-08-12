@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="static/css/create.css">
+    <title>Cadastro</title>
+</head>
+<body>
+    <form method="post" class="login" action="login">
+        {% csrf_token %}
+        <h2><img src="static/images/money-back64.png"/>MyFinances</h2>
+
+        <div id="Uname">
+            {{ form.nome.errors }}
+            <label><b>Nome: </b></label>
+            {{ form.nome }}
+        </div>
+
+
+        <div id="Uemail">
+            {{ form.email.errors }}
+         <label><b>Email: </b></label>
+            {{ form.email }}
+        </div>
+
+        <div id="Pass">
+            {{ form.senha.errors }}
+          <label><b>Senha: </b></label>
+            {{ form.senha }}
+        </div>
+
+
+        <div>
+            <input type="submit" id="log" name="Cadastrar">
+        </div>
+    </form>
+</body>
+</html>
