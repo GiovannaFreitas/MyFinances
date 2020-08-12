@@ -1,33 +1,32 @@
 <!DOCTYPE html>
-<html>
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>MyFinances</title>
-    <link rel="stylesheet" type="text/css" href="static/css/index.css"/>
-    <link rel="stylesheet" type="text/css" href="static/css/login.css"/>
-    <link rel="shortcut icon" href="static/images/money-back.png" type="image/x-png"/>
+    <link rel="stylesheet" type="text/css" href="static/css/create.css">
+    <title>MyFinances - Login</title>
 </head>
 <body>
-    <div class="login">
-    <form id="login" method="get" action="page-one">
+    <form method="post" class="login" action="page-one">
+        {% csrf_token %}
         <h2><img src="static/images/money-back64.png"/>MyFinances</h2>
-        <label><b>Email
-        </b>
-        </label>
-        <input type="email" name="Uname" id="Uname" size="20" maxlength="40" placeholder="Email">
-        <br><br>
-        <label><b>Senha
-        </b>
-        </label>
-        <input type="Password" name="Pass" id="Pass" size="8" maxlength="8"  placeholder="Senha">
-        <br><br>
-        <input type="button" name="log" id="log" value="Entrar">
-        <br><br>
-        <input type="checkbox" id="check">
-        <span>Lembre-me</span>
-        <br><br>
-        <a href="#">Esqueci minha senha</a>
+
+
+        <div id="Uemail">
+            {{ form_login.username.errors }}
+         <label><b>Email: </b></label>
+            {{ form_login.username }}
+        </div>
+
+        <div id="Pass">
+            {{ form_login.password.errors }}
+          <label><b>Senha: </b></label>
+            {{ form_login.password }}
+        </div>
+
+
+        <div>
+            <input type="submit" id="log" name="Cadastrar">
+        </div>
     </form>
-</div>
 </body>
 </html>
